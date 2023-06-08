@@ -1,0 +1,6 @@
+{
+  "name": "national-forestry-authority/nfa_landing",
+  "description": "Provides a landing page for users visiting NFA sites",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later"
+}
