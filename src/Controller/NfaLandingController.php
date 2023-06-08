@@ -68,6 +68,7 @@ class NfaLandingController extends ControllerBase {
       '#site_links' => $sites_links,
       '#env_link' => $env_link,
       '#active_env' => $active_environment,
+      '#login_link' => Link::fromTextAndUrl(t('Login to @site', ['@site' => $sites[$active_site]['name']]), Url::fromRoute('user.login')),
     ];
 
     return $build;

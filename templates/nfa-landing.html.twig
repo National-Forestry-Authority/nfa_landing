@@ -12,15 +12,19 @@
  *   - name: The name of the active environment.
  *   - bg_color: The background color of the environment.
  *   - fg_color: The foreground color of the environment.
- *
+ * - login_link: Link to the login page.
+
  * @see template_preprocess_taxonomy_term()
  *
  * @ingroup themeable
  */
 #}
 <div>{{ message }}</div>
+<div>{{ login_link }}</div>
 {% for site_link in site_links %}
   <div>{{ site_link }}</div>
 {% endfor %}
+<div>{{ login_link }}</div>
+
 <div>{{ env_link }}</div>
 <div style="background-color: {{ active_env.bg_color }}; color: {{ active_env.fg_color }}">{{ active_env.name }}</div>

@@ -16,6 +16,7 @@ function nfa_landing_theme($existing, $type, $theme, $path) {
         'site_links' => [],
         'env_link' => NULL,
         'active_env' => [],
+        'login_link' => NULL,
       ],
     ],
   ];
