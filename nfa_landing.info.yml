@@ -1,0 +1,8 @@
+name: NFA Landing
+type: module
+description: Provides a landing page for users visiting NFA sites
+package: NFA
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - drupal:environment_indicator

@@ -1,0 +1,4 @@
+administer nfa_landing configuration:
+  title: 'Administer nfa_landing configuration'
+  description: 'Optional description.'
+  restrict access: true

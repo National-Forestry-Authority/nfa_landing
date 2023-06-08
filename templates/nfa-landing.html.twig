@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default implementation of the NFA landing page. Basic elements are
+ * displayed here. Styling is intended to be done in a theme override template.
+ *
+ * Available variables:
+ * - message: The welcome message defined in the module settings page.
+ * - site_links: Links to the other NFA websites.
+ * - env_link: Link to another environment of the current active site.
+ * - active_env: Environment indicator data, including:
+ *   - name: The name of the active environment.
+ *   - bg_color: The background color of the environment.
+ *   - fg_color: The foreground color of the environment.
+ *
+ * @see template_preprocess_taxonomy_term()
+ *
+ * @ingroup themeable
+ */
+#}
+<div>{{ message }}</div>
+{% for site_link in site_links %}
+  <div>{{ site_link }}</div>
+{% endfor %}
+<div>{{ env_link }}</div>
+<div style="background-color: {{ active_env.bg_color }}; color: {{ active_env.fg_color }}">{{ active_env.name }}</div>

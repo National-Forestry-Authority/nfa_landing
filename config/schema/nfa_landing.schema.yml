@@ -1,0 +1,56 @@
+# Schema for the configuration files of the NFA Landing module.
+nfa_landing.settings:
+  type: config_object
+  label: 'NFA Landing settings'
+  mapping:
+    site:
+      type: string
+      label: 'NFA Site'
+    message:
+      type: string
+      label: 'Welcome message'
+    farmers:
+      type: mapping
+      mapping:
+        name:
+          type: string
+          label: 'Site name'
+        production:
+          type: string
+          label: 'Production url'
+        staging:
+          type: string
+          label: 'Staging url'
+        development:
+          type: string
+          label: 'Local ddev url'
+    forests:
+      type: mapping
+      mapping:
+        name:
+          type: string
+          label: 'Site name'
+        production:
+          type: string
+          label: 'Production url'
+        staging:
+          type: string
+          label: 'Staging url'
+        development:
+          type: string
+          label: 'Local ddev url'
+    brms:
+      type: mapping
+      mapping:
+        name:
+          type: string
+          label: 'Site name'
+        production:
+          type: string
+          label: 'Production url'
+        staging:
+          type: string
+          label: 'Staging url'
+        development:
+          type: string
+          label: 'Local ddev url'

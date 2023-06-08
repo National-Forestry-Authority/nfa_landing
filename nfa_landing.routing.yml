@@ -1,0 +1,17 @@
+nfa_landing.example:
+  path: '/nfa-landing'
+  defaults:
+    _title_callback: '\Drupal\nfa_landing\Controller\NfaLandingController::title'
+    _controller: '\Drupal\nfa_landing\Controller\NfaLandingController::build'
+  requirements:
+    _access: 'TRUE'
+  options:
+    _admin_route: FALSE
+
+nfa_landing.settings_form:
+  path: '/admin/config/system/nfa-landing'
+  defaults:
+    _title: 'NFA Landing settings'
+    _form: 'Drupal\nfa_landing\Form\SettingsForm'
+  requirements:
+    _permission: 'administer nfa_landing configuration'

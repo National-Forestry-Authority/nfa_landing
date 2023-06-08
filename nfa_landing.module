@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for NFA Landing module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function nfa_landing_theme($existing, $type, $theme, $path) {
+  return [
+    'nfa_landing' => [
+      'variables' => [
+        'message' => NULL,
+        'site_links' => [],
+        'env_link' => NULL,
+        'active_env' => [],
+      ],
+    ],
+  ];
+}
