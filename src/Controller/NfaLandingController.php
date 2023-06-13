@@ -5,6 +5,7 @@ namespace Drupal\nfa_landing\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Returns responses for NFA Landing routes.
@@ -27,6 +28,12 @@ class NfaLandingController extends ControllerBase {
    * Builds the page content.
    */
   public function build() {
+
+    // If the user is logged in redirect to the front page.
+    if ($this->currentUser()->isAuthenticated()) {
+      $url = Url::fromRoute('<front>');
+      return new RedirectResponse($url->toString());
+    }
 
     // Create links to other NFA sites using the current active environment. For
     // example if we are in the staging environment of Farmers, the links should

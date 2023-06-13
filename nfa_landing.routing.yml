@@ -1,4 +1,4 @@
-nfa_landing.example:
+nfa_landing.page:
   path: '/nfa-landing'
   defaults:
     _title_callback: '\Drupal\nfa_landing\Controller\NfaLandingController::title'
