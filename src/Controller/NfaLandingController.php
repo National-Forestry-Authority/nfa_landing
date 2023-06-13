@@ -53,7 +53,7 @@ class NfaLandingController extends ControllerBase {
     foreach ($sites as $site) {
       if (strtolower($site['name']) != $active_site) {
         $url = Url::fromUri($site[strtolower($active_environment['name'])]);
-        $sites_links[] = Link::fromTextAndUrl(t('Go to @site', ['@site' => $site['name']]), $url);
+        $sites_links[] = Link::fromTextAndUrl(t('Go to @site', ['@site' => $site['name']]), $url)->toRenderable();
       }
     }
     // Create a link to another environments of the active site. For example if
@@ -61,12 +61,12 @@ class NfaLandingController extends ControllerBase {
     // production environment of Farmers.
     if ($active_environment['name'] == 'Staging') {
       $url = Url::fromUri($sites[$active_site]['production']);
-      $env_link = Link::fromTextAndUrl(t('Click here to go to production'), $url);
+      $env_link = Link::fromTextAndUrl(t('Go to production'), $url)->toRenderable();
     }
     else {
       // Development and production will show a link to Staging.
       $url = Url::fromUri($sites[$active_site]['staging']);
-      $env_link = Link::fromTextAndUrl(t('Click here to go to staging'), $url);
+      $env_link = Link::fromTextAndUrl(t('Go to staging'), $url)->toRenderable();
     }
 
     $build['content'] = [
@@ -75,7 +75,7 @@ class NfaLandingController extends ControllerBase {
       '#site_links' => $sites_links,
       '#env_link' => $env_link,
       '#active_env' => $active_environment,
-      '#login_link' => Link::fromTextAndUrl(t('Login to @site', ['@site' => $sites[$active_site]['name']]), Url::fromRoute('user.login')),
+      '#login_link' => Link::fromTextAndUrl(t('Login to @site', ['@site' => $sites[$active_site]['name']]), Url::fromRoute('user.login'))->toRenderable(),
     ];
 
     return $build;
